@@ -1,50 +1,63 @@
-# Welcome to your Expo app 👋
+# MeteoApp ☀️🌤️🌧️
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Application météo développée avec Expo (React Native) qui affiche la météo actuelle et les prévisions horaires basées sur la géolocalisation de l'utilisateur.
 
-## Get started
+## Fonctionnalités
 
-1. Install dependencies
+- ✓ Géolocalisation avec gestion des permissions
+- ✓ Affichage de la météo actuelle (température, ressenti, humidité)
+- ✓ Prévisions horaires sur 24h
+- ✓ Auto-rafraîchissement toutes les 15 minutes
+- ✓ Support du mode clair/sombre
+- ✓ Gestion des erreurs réseau
+- ✓ Possibilité de rafraîchir manuellement les données (pull-to-refresh)
+
+## Technologies utilisées
+
+- **Expo/React Native** pour le développement multiplateforme
+- **expo-location** pour la géolocalisation
+- **date-fns** pour la gestion des dates et formats d'heures
+- **TypeScript** pour un code type-safe
+- **API Open-Meteo** pour les données météorologiques
+
+## Installation
+
+1. Cloner le dépôt
+
+2. Installer les dépendances
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Lancer l'application
 
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## API Open-Meteo
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Cette application utilise l'API gratuite [Open-Meteo](https://open-meteo.com/) qui fournit des données météorologiques précises sans nécessiter de clé API. Les prévisions sont basées sur les codes météo de l'Organisation Météorologique Mondiale (WMO).
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Structure du projet
 
-## Get a fresh project
+- `/app` - Fichiers principaux de l'application (pages)
+- `/components/weather` - Composants UI spécifiques à l'affichage météo
+- `/constants` - Constantes et mappage des codes météo vers des icônes
+- `/services` - Services pour la géolocalisation et les requêtes API
+- `/types` - Définitions TypeScript pour les données météo
 
-When you're ready, run:
+## Captures d'écran
 
-```bash
-npm run reset-project
-```
+- Page principale : Affiche la température actuelle, le ressenti, l'humidité et les prévisions horaires
+- Page À propos : Informations sur l'application et les technologies utilisées
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Développement
 
-## Learn more
+Vous pouvez exécuter l'application sur :
+- Android (via Emulator ou appareil physique)
+- iOS (via Simulator ou appareil physique)
+- Web (fonctionnalités limitées)
 
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Pour plus d'informations sur le développement avec Expo, consultez la [documentation Expo](https://docs.expo.dev/).
