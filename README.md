@@ -51,7 +51,10 @@ Cette application utilise l'API gratuite [Open-Meteo](https://open-meteo.com/) q
 ## Captures d'écran
 
 - Page principale : Affiche la température actuelle, le ressenti, l'humidité et les prévisions horaires
+![alt text](image.png)
+
 - Page À propos : Informations sur l'application et les technologies utilisées
+![alt text](image-1.png)
 
 ## Développement
 
