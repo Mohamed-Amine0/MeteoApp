@@ -1,4 +1,4 @@
-import { StyleSheet, Image, Platform } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 import { Collapsible } from '@/components/Collapsible';
 import { ExternalLink } from '@/components/ExternalLink';
@@ -10,86 +10,95 @@ import { IconSymbol } from '@/components/ui/IconSymbol';
 export default function TabTwoScreen() {
   return (
     <ParallaxScrollView
-      headerBackgroundColor={{ light: '#D0D0D0', dark: '#353636' }}
+      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
       headerImage={
         <IconSymbol
           size={310}
-          color="#808080"
-          name="chevron.left.forwardslash.chevron.right"
+          color="#6b9fb9"
+          name="cloud.sun.fill"
           style={styles.headerImage}
         />
       }>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Explore</ThemedText>
+        <ThemedText type="title">À propos de l'application</ThemedText>
       </ThemedView>
-      <ThemedText>This app includes example code to help you get started.</ThemedText>
-      <Collapsible title="File-based routing">
+      <ThemedText>
+        Une application météo simple utilisant Expo (React Native) qui affiche la météo actuelle et les prévisions horaires.
+      </ThemedText>
+      
+      <Collapsible title="Fonctionnalités">
         <ThemedText>
-          This app has two screens:{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">app/(tabs)/explore.tsx</ThemedText>
+          ✓ Géolocalisation avec gestion des permissions
         </ThemedText>
         <ThemedText>
-          The layout file in <ThemedText type="defaultSemiBold">app/(tabs)/_layout.tsx</ThemedText>{' '}
-          sets up the tab navigator.
+          ✓ Affichage de la météo actuelle (température, ressenti, humidité)
         </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/router/introduction">
-          <ThemedText type="link">Learn more</ThemedText>
+        <ThemedText>
+          ✓ Prévisions horaires sur 24h
+        </ThemedText>
+        <ThemedText>
+          ✓ Auto-rafraîchissement toutes les 15 minutes
+        </ThemedText>
+        <ThemedText>
+          ✓ Support du mode clair/sombre
+        </ThemedText>
+        <ThemedText>
+          ✓ Gestion des erreurs réseau
+        </ThemedText>
+      </Collapsible>
+      
+      <Collapsible title="Technologies utilisées">
+        <ThemedText>
+          • <ThemedText type="defaultSemiBold">Expo/React Native</ThemedText> pour le développement multiplateforme
+        </ThemedText>
+        <ThemedText>
+          • <ThemedText type="defaultSemiBold">expo-location</ThemedText> pour la géolocalisation
+        </ThemedText>
+        <ThemedText>
+          • <ThemedText type="defaultSemiBold">date-fns</ThemedText> pour la gestion des dates
+        </ThemedText>
+        <ThemedText>
+          • <ThemedText type="defaultSemiBold">TypeScript</ThemedText> pour un code type-safe
+        </ThemedText>
+        <ThemedText>
+          • <ThemedText type="defaultSemiBold">API Open-Meteo</ThemedText> pour les données météo
+        </ThemedText>
+      </Collapsible>
+      
+      <Collapsible title="API Open-Meteo">
+        <ThemedText>
+          Cette application utilise l'API gratuite Open-Meteo pour récupérer les données météorologiques.
+        </ThemedText>
+        <ThemedText>
+          L'API fournit des données météo précises sans besoin de clé API, ce qui la rend parfaite pour des projets comme celui-ci.
+        </ThemedText>
+        <ExternalLink href="https://open-meteo.com/en/docs">
+          <ThemedText type="link">Documentation Open-Meteo</ThemedText>
         </ExternalLink>
       </Collapsible>
-      <Collapsible title="Android, iOS, and web support">
+      
+      <Collapsible title="Codes météo">
         <ThemedText>
-          You can open this project on Android, iOS, and the web. To open the web version, press{' '}
-          <ThemedText type="defaultSemiBold">w</ThemedText> in the terminal running this project.
+          Les icônes météo sont basées sur les codes météo WMO (World Meteorological Organization) :
         </ThemedText>
-      </Collapsible>
-      <Collapsible title="Images">
         <ThemedText>
-          For static images, you can use the <ThemedText type="defaultSemiBold">@2x</ThemedText> and{' '}
-          <ThemedText type="defaultSemiBold">@3x</ThemedText> suffixes to provide files for
-          different screen densities
+          • 0 : Ciel dégagé ☀️
         </ThemedText>
-        <Image source={require('@/assets/images/react-logo.png')} style={{ alignSelf: 'center' }} />
-        <ExternalLink href="https://reactnative.dev/docs/images">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Custom fonts">
         <ThemedText>
-          Open <ThemedText type="defaultSemiBold">app/_layout.tsx</ThemedText> to see how to load{' '}
-          <ThemedText style={{ fontFamily: 'SpaceMono' }}>
-            custom fonts such as this one.
-          </ThemedText>
+          • 1-3 : Nuageux 🌤️ ⛅ ☁️
         </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/versions/latest/sdk/font">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Light and dark mode components">
         <ThemedText>
-          This template has light and dark mode support. The{' '}
-          <ThemedText type="defaultSemiBold">useColorScheme()</ThemedText> hook lets you inspect
-          what the user's current color scheme is, and so you can adjust UI colors accordingly.
+          • 45, 48 : Brouillard 🌫️
         </ThemedText>
-        <ExternalLink href="https://docs.expo.dev/develop/user-interface/color-themes/">
-          <ThemedText type="link">Learn more</ThemedText>
-        </ExternalLink>
-      </Collapsible>
-      <Collapsible title="Animations">
         <ThemedText>
-          This template includes an example of an animated component. The{' '}
-          <ThemedText type="defaultSemiBold">components/HelloWave.tsx</ThemedText> component uses
-          the powerful <ThemedText type="defaultSemiBold">react-native-reanimated</ThemedText>{' '}
-          library to create a waving hand animation.
+          • 51-67 : Pluie/Bruine 🌧️
         </ThemedText>
-        {Platform.select({
-          ios: (
-            <ThemedText>
-              The <ThemedText type="defaultSemiBold">components/ParallaxScrollView.tsx</ThemedText>{' '}
-              component provides a parallax effect for the header image.
-            </ThemedText>
-          ),
-        })}
+        <ThemedText>
+          • 71-86 : Neige ❄️
+        </ThemedText>
+        <ThemedText>
+          • 95-99 : Orage ⛈️
+        </ThemedText>
       </Collapsible>
     </ParallaxScrollView>
   );
@@ -97,9 +106,9 @@ export default function TabTwoScreen() {
 
 const styles = StyleSheet.create({
   headerImage: {
-    color: '#808080',
+    color: '#6b9fb9',
     bottom: -90,
-    left: -35,
+    right: 20,
     position: 'absolute',
   },
   titleContainer: {
